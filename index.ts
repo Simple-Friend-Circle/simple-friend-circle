@@ -66,8 +66,8 @@ async function generate_page() {
 <div class="item">
 <img src="${avatar}" alt="avatar" class="avatar">
 <div class="info">
-<a href="${website}" class="title">${title}</a>
-<a href="${link}" class="name">${name}</a>
+<a href="${website}" target="_blank" class="title">${title}</a>
+<a href="${link}" target="_blank" class="name">${name}</a>
 <time class="date">${new Date(date).toLocaleDateString()}</time>
 </div>
 </div>
