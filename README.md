@@ -17,7 +17,7 @@ https://mumulhl.eu.org/index.xml https://mumulhl.eu.org/img/avatar_hub440208ea63
 你可以在网页上插入这些代码来显示友链朋友圈：
 
 ```html
-<iframe src="https://mumulhl.eu.org/simple-friend-circle/" width="100%" height="400rem" style="border:none;"></iframe>
+<iframe src="https://YOUR GITHUB NAME.github.io/simple-friend-circle/" width="100%" height="400rem" style="border:none;"></iframe>
 ```
 
 ## 主题
