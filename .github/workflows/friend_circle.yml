@@ -1,8 +1,3 @@
-# 友链朋友圈
-
-## Workflow
-
-```yml
 name: Friend Circle
 
 on:
@@ -11,6 +6,9 @@ on:
     - cron: "0 0 * * *"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  push:
+    paths:
+      - "links"
 
 jobs:
   friend_circle:
@@ -30,12 +28,3 @@ jobs:
         folder: public
         clean: true
         single-commit: true
-```
-
-## 配置
-
-links 文件用于配置各个博客的 RSS 地址和头像：
-
-```
-https://mumulhl.eu.org/index.xml https://mumulhl.eu.org/img/avatar_hub440208ea63c4061633255bf6046ed7b_104338_300x0_resize_q75_h2_box_2.webp
-```
