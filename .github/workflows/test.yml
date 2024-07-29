@@ -1,0 +1,14 @@
+name: Test
+on: push
+
+jobs:
+  friend_circle:
+    name: Friend Circle
+    runs-on: ubuntu-22.04	
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: start
+      # run: node dist/index.js && npm run build
+      uses: ./

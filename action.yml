@@ -1,0 +1,16 @@
+name: "Friend Circle"
+description: "Friend circle"
+author: "Mumulhl"
+
+inputs:
+  max_everyone:
+    description: "Maximum number of articles for per blog"
+    default: 5
+  max_number:
+    description: "Total number of articles"
+    default: 50
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
+
