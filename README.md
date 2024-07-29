@@ -11,9 +11,17 @@ on:
     - cron: "0 0 * * *"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  push:
+    paths:
+      - "links"
+      - "template.html"
+      - "public/*"
 
 jobs:
   friend_circle:
+    permissions:
+      contents: write
+
     name: Friend Circle
     runs-on: ubuntu-22.04
     steps:
@@ -21,7 +29,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Friend Circle
-      uses: mumu-lhl/simple-friend-circle
+      uses: mumu-lhl/simple-friend-circle@main
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4

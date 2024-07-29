@@ -14,6 +14,9 @@ on:
 
 jobs:
   friend_circle:
+    permissions:
+      contents: write
+
     name: Friend Circle
     runs-on: ubuntu-22.04
     steps:
