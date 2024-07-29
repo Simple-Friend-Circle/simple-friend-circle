@@ -25,7 +25,7 @@ body {
 .list {
   display: flex;
   flex-wrap: wrap;
-  max-width: 72rem;
+  max-width: 63rem;
   margin: auto;
 }
 
@@ -33,7 +33,7 @@ body {
   display: flex;
   align-items: center;
   background-color: var(--item-color);
-  width: 20rem;
+  width: 17rem;
   height: 6rem;
   margin: 1rem auto;
   padding: 1rem;
