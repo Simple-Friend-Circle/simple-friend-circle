@@ -26,6 +26,12 @@ jobs:
     - name: Friend Circle
       uses: mumu-lhl/simple-friend-circle@main
 
+    - name: Install minify
+      run: sudo apt-get install minify
+
+    - name: Minify
+      run: minify -r public/ -o public/
+
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
