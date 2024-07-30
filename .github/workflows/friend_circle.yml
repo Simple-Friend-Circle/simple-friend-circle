@@ -28,7 +28,7 @@ jobs:
       uses: mumu-lhl/simple-friend-circle@main
 
     - name: Install minify
-      run: apt-get install -y minify
+      run: sudo apt-get install -y minify
 
     - name: Minify
       run: minify -r ./public/ -o ./public/
