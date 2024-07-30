@@ -31,12 +31,12 @@ jobs:
       run: sudo apt-get install -y minify
 
     - name: Minify
-      run: minify -r ./public/ -o ./public/
+      run: minify -r public -o .
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages
-        folder: ./public/
+        folder: public
         clean: true
         single-commit: true
