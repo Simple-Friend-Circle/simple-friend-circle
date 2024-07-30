@@ -5,6 +5,8 @@
   --link-color: #34495e;
   --title-color: #000;
   --date-color: #fff;
+  --item-width: 20em;
+  --item-height: 6rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,6 +20,13 @@
   }
 }
 
+@media (max-width: 450px) {
+  :root {
+    --item-width: 14em;
+    --item-height: 7em;
+  }
+}
+
 body {
   background-color: var(--background-color);
 }
@@ -25,7 +34,7 @@ body {
 .list {
   display: flex;
   flex-wrap: wrap;
-  max-width: 63rem;
+  max-width: 72em;
   margin: auto;
 }
 
@@ -33,8 +42,8 @@ body {
   display: flex;
   align-items: center;
   background-color: var(--item-color);
-  width: 17rem;
-  height: 6rem;
+  width: var(--item-width);
+  height: var(--item-height);
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 10px;
