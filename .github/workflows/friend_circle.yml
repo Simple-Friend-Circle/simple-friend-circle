@@ -11,6 +11,7 @@ on:
       - "links"
       - "template.html"
       - "public/*"
+      - ".github/workflows/friend_circle.yml"
 
 jobs:
   friend_circle:
