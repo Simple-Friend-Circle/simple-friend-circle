@@ -12,6 +12,16 @@ links 文件用于配置各个博客的 RSS 地址和头像：
 https://mumulhl.eu.org/index.xml https://mumulhl.eu.org/img/avatar_hub440208ea63c4061633255bf6046ed7b_104338_300x0_resize_q75_h2_box_2.webp
 ```
 
+在 workflow 中配置输出的文章数量：
+
+```yml
+- name: Friend Circle
+  uses: mumu-lhl/simple-friend-circle@main
+  with:
+    max_everyone: 5 # 每个博客最多的文章数量
+    max_number: 50 # 总共最多的文章数量
+```
+
 ## 插入网页
 
 你可以在网页上插入这些代码来显示友链朋友圈：
