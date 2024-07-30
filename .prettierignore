@@ -1,0 +1,9 @@
+# Ignore artifacts:
+public
+dist
+*.html
+*.yml
+*.md
+*.json
+bun.lockb
+.prettierrc
