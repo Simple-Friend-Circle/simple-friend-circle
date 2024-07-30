@@ -27,7 +27,7 @@ jobs:
       uses: mumu-lhl/simple-friend-circle@main
 
     - name: Install minify
-      run: sudo apt-get install -y minify
+      run: apt-get install -y minify
 
     - name: Minify
       run: minify -r ./public/ -o ./public/
@@ -36,6 +36,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages
-        folder: public
+        folder: ./public/
         clean: true
         single-commit: true
