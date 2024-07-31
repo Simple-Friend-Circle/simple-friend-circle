@@ -1,5 +1,7 @@
 # 友链朋友圈
 
+![插入网页示例](https://github.com/user-attachments/assets/bcb1fa6f-9c05-433e-a0ed-47c6e9f0c11d)
+
 ## 搭建
 
 Fork 本项目，在 Actions 中开启 workflows，然后开启叫作 Friend Circle 的 workflow，关闭叫作 Lint Commit Messages 的 workflow，之后在 Settings 的 Pages 中将 Branch 选为 gh-pages。
