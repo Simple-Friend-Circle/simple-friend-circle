@@ -24618,7 +24618,8 @@ function articleExtracter(item, feed) {
 }
 async function fetchArticles(links) {
   const rss = links.filter((i) => Boolean(i[0])).map(fetchRSS);
-  for (let i of rss) {
+  for (let [index, i] of rss.keys()) {
+    core.info(`Fetching ${links[index]}`);
     const feed = await i;
     for (let item of feed.items.slice(0, max_everyone)) {
       articleExtracter(item, feed);
@@ -24645,9 +24646,14 @@ async function generate_page() {
   await writeFile("public/index.html", html, { flag: "w+" });
 }
 async function main() {
+  core.info("Fetching links");
   const links = await readLinks();
+  core.startGroup("Fetching articles");
   await fetchArticles(links);
+  core.endGroup();
+  core.info("Generating page");
   await generate_page();
+  core.info("DONE");
 }
 var LINKS_PATH = "./links";
 var TEMPLATE = await readFile("./template.html", "utf-8");
