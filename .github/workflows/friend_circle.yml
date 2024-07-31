@@ -12,6 +12,7 @@ on:
       - "template.html"
       - "public/*"
       - ".github/workflows/friend_circle.yml"
+      - "dist/index.js"
 
 jobs:
   friend_circle:
