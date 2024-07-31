@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.1.0](https://github.com/Simple-Friend-Circle/simple-friend-circle/compare/v1.0.2..v1.1.0) - 2024-07-31
+
+### Bug Fixes
+
+- convert input variable to number - ([8969cee](https://github.com/Simple-Friend-Circle/simple-friend-circle/commit/8969cee4f1796c11b053a034c2ad3686547a0e67)) - Mumulhl
+- .for is not iterable - ([ebf9dc5](https://github.com/Simple-Friend-Circle/simple-friend-circle/commit/ebf9dc59f156913bca8ce429aed48a11ba72c2b1)) - Mumulhl
+- only print website url - ([7a20293](https://github.com/Simple-Friend-Circle/simple-friend-circle/commit/7a20293b0fca1a99cddffc3dc20e8dbc91925fc3)) - Mumulhl
+
+### Documentation
+
+- add example image - ([d955008](https://github.com/Simple-Friend-Circle/simple-friend-circle/commit/d955008c7dea91565f2f19cad9216a8b72f7bb12)) - Mumulhl
+
+### Features
+
+- add logging - ([e0aef88](https://github.com/Simple-Friend-Circle/simple-friend-circle/commit/e0aef88432018ca7f72e8db39e136f97b03c6e08)) - Mumulhl
+
+### Miscellaneous Chores
+
+- add dist/index.js to trigger - ([e12298c](https://github.com/Simple-Friend-Circle/simple-friend-circle/commit/e12298cf02ce1bdfcad9cc17a6175b9303e7e30f)) - Mumulhl
+
+---
 ## [1.0.2](https://github.com/Simple-Friend-Circle/simple-friend-circle/compare/v1.0.1..v1.0.2) - 2024-07-30
 
 ### Bug Fixes
