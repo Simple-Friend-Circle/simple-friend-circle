@@ -16,8 +16,8 @@ const TEMPLATE = await readFile("./template.html", "utf-8");
 
 const articles: Article[] = [];
 
-const max_everyone = core.getInput("max_everyone");
-const max_number = core.getInput("max_number");
+const max_everyone = Number(core.getInput("max_everyone"));
+const max_number = Number(core.getInput("max_number"));
 
 async function readLinks(): Promise<string[][]> {
   const content = await readFile(LINKS_PATH, { encoding: "utf8" });

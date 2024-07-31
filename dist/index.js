@@ -24652,8 +24652,8 @@ async function main() {
 var LINKS_PATH = "./links";
 var TEMPLATE = await readFile("./template.html", "utf-8");
 var articles = [];
-var max_everyone = core.getInput("max_everyone");
-var max_number = core.getInput("max_number");
+var max_everyone = Number(core.getInput("max_everyone"));
+var max_number = Number(core.getInput("max_number"));
 try {
   main();
 } catch (err) {
