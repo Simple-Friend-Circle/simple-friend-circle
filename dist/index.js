@@ -24620,7 +24620,7 @@ async function fetchArticles(links) {
   const rss = links.filter((i) => Boolean(i[0])).map(fetchRSS);
   let index = 0;
   for (let i of rss) {
-    core.info(`Fetching ${links[index]}`);
+    core.info(`Fetching ${links[index][0]}`);
     const feed = await i;
     for (let item of feed.items.slice(0, max_everyone)) {
       articleExtracter(item, feed);
