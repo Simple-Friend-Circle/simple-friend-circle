@@ -49,12 +49,14 @@ function articleExtracter(item: any, feed: any) {
 
 async function fetchArticles(links: any) {
   const rss = links.filter((i: string[]) => Boolean(i[0])).map(fetchRSS);
-  for (let [index, i] of rss.keys()) {
+  let index = 0;
+  for (let i of rss) {
     core.info(`Fetching ${links[index]}`);
     const feed = await i;
     for (let item of feed.items.slice(0, max_everyone)) {
       articleExtracter(item, feed);
     }
+    i += 1;
   }
 
   articles.sort((a, b) => b.date - a.date);
