@@ -1,6 +1,6 @@
-import * as core from "@actions/core";
-import { readFile, writeFile, mkdir } from "fs/promises";
-import Parser from "rss-parser";
+// deno-lint-ignore-file no-explicit-any
+import * as core from "npm:@actions/core";
+import Parser from "npm:rss-parser";
 
 interface Article {
   name: string;
@@ -12,16 +12,18 @@ interface Article {
 }
 
 const LINKS_PATH = "./links";
-const TEMPLATE = await readFile("./template.html", "utf-8");
+const TEMPLATE = await Deno.readTextFile("./template.html");
 
 const articles: Article[] = [];
 
-const max_everyone = Number(core.getInput("max_everyone"));
-const max_number = Number(core.getInput("max_number"));
+// const max_everyone = Number(core.getInput("max_everyone"));
+// const max_number = Number(core.getInput("max_number"));
+const max_everyone = 5;
+const max_number = 50;
 
 async function readLinks(): Promise<string[][]> {
-  const content = await readFile(LINKS_PATH, { encoding: "utf8" });
-  return content.split("\n").map((s) => s.split(" "));
+  const content = await Deno.readTextFile(LINKS_PATH);
+  return content.split("\n").map((s: string) => s.split(" "));
 }
 
 async function fetchRSS([link, avatar]: string[]): Promise<any> {
@@ -50,13 +52,13 @@ function articleExtracter(item: any, feed: any) {
 async function fetchArticles(links: any) {
   const rss = links.filter((i: string[]) => Boolean(i[0])).map(fetchRSS);
   let index = 0;
-  for (let i of rss) {
+  for (const i of rss) {
     core.info(`Fetching ${links[index][0]}`);
     const feed = await i;
-    for (let item of feed.items.slice(0, max_everyone)) {
+    for (const item of feed.items.slice(0, max_everyone)) {
       articleExtracter(item, feed);
     }
-    i += 1;
+    index += 1;
   }
 
   articles.sort((a, b) => b.date - a.date);
@@ -64,10 +66,12 @@ async function fetchArticles(links: any) {
 
 async function generate_page() {
   let list = "";
-  for (let { name, title, avatar, link, website, date } of articles.slice(
-    0,
-    max_number,
-  )) {
+  for (
+    const { name, title, avatar, link, website, date } of articles.slice(
+      0,
+      max_number,
+    )
+  ) {
     list += `
 <div class="item">
 <img src="${avatar}" alt="avatar" class="avatar">
@@ -81,8 +85,8 @@ async function generate_page() {
   }
 
   const html = TEMPLATE.replace("<LIST>", list);
-  await mkdir("public", { recursive: true });
-  await writeFile("public/index.html", html, { flag: "w+" });
+  await Deno.mkdir("public", { recursive: true });
+  await Deno.writeTextFile("public/index.html", html, { create: true });
 }
 
 async function main() {

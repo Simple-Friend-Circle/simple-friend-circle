@@ -22,17 +22,13 @@ jobs:
     name: Friend Circle
     runs-on: ubuntu-22.04
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+    - uses: denoland/setup-deno@v1
 
-    - name: Friend Circle
-      uses: mumu-lhl/simple-friend-circle@main
+    - run: deno run -A main.ts
 
-    - name: Install minify
-      run: sudo apt-get install -y minify
-
-    - name: Minify
-      run: minify -r public -o .
+    - run: sudo apt-get install -y minify
+    - run: minify -r public -o .
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4

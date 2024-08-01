@@ -1,4 +1,0 @@
-bun run build
-bun run format
-
-git add -A
