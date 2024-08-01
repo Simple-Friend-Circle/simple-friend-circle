@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.1.1](https://github.com/Simple-Friend-Circle/simple-friend-circle/compare/v1.1.0..v1.1.1) - 2024-08-01
+
+### Miscellaneous Chores
+
+- abandon bun, use deno - ([8e49236](https://github.com/Simple-Friend-Circle/simple-friend-circle/commit/8e492361178c68d88c923b3679f713c37c52e62e)) - Mumulhl
+- replace workflow trigger from dist/index.js to main.ts - ([5ffe3f3](https://github.com/Simple-Friend-Circle/simple-friend-circle/commit/5ffe3f30ba9cb934e2032608b97996801f9ee763)) - Mumulhl
+
+---
 ## [1.1.0](https://github.com/Simple-Friend-Circle/simple-friend-circle/compare/v1.0.2..v1.1.0) - 2024-07-31
 
 ### Bug Fixes
@@ -22,6 +30,7 @@ All notable changes to this project will be documented in this file. See [conven
 ### Miscellaneous Chores
 
 - add dist/index.js to trigger - ([e12298c](https://github.com/Simple-Friend-Circle/simple-friend-circle/commit/e12298cf02ce1bdfcad9cc17a6175b9303e7e30f)) - Mumulhl
+- release v1.1.0 - ([082763b](https://github.com/Simple-Friend-Circle/simple-friend-circle/commit/082763b5e70d80c1fbec39130b5c9192f279d485)) - Mumulhl
 
 ---
 ## [1.0.2](https://github.com/Simple-Friend-Circle/simple-friend-circle/compare/v1.0.1..v1.0.2) - 2024-07-30
